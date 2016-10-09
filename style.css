@@ -1,0 +1,40 @@
+#passwordBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 500px;
+}
+
+#passwordBox h3 {
+	position: relative;
+	margin: auto;
+	padding: 10px;
+	margin-top: 10px;
+	font-family: 'Baloo Da', cursive;
+}
+
+#passwordBox p {
+	position: relative;
+	margin: auto;
+	padding: 10px;
+	font-size: 2em;
+	margin-top: 10px;
+	font-family: 'Baloo Da', cursive;
+}
+
+form {
+	font-family: 'Baloo Da', cursive;
+}
+
+#loginForm {
+	text-align: left;	
+	width: 300px;
+}
+
+
+#LoginButton{
+	float: right;
+	padding-bottom: 30px;
+}
