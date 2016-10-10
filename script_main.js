@@ -2,15 +2,19 @@ $( document ).ready(function(){
 
 	// method buat bikin stop watch
 
-	setInterval(countUp, 100);
+	$("#startButton").click(function(){
 
-	function countUp(){
+		//TODO: give condition what state is the button is pressed (stop or start)
+		
+		setInterval(countUp, 100);
+
+		$("#startButton").prop("value", "Stop");
+
+		function countUp(){
 		var timer = $('#timer').find('.stopwatch');
 
 		var countSecond = parseInt(timer.attr("value"), 10);
 		countSecond = countSecond+1;
-
-		console.log(countSecond + " second");
 
 		var hour = Math.floor(countSecond/3600);
 		var minutes = Math.floor((countSecond/60) % 60);
@@ -36,4 +40,11 @@ $( document ).ready(function(){
 		$('#timer').find('.stopwatch').text(totalTime);
 
 	}
+
+	});
+	
+	var username = localStorage.getItem("username");
+
+	$('#playerUsername').text("Username: " + username);
+
 });

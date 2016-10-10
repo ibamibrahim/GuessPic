@@ -38,3 +38,7 @@ form {
 	float: right;
 	padding-bottom: 30px;
 }
+
+#wrongPassword {
+	display: none;
+}
