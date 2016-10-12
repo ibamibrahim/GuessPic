@@ -5,7 +5,7 @@
 #score {
 	position: absolute;
 	right: 45%;
-	top: 2%;
+	top: 21%;
 }
 
 #mainArea {
@@ -13,4 +13,8 @@
 	top: 50%;
 	left: 60%;
 	transform: translate(-50%, -50%);
+}
+
+tr {
+
 }
