@@ -26,5 +26,47 @@ td {
 }
 
 #startButton {
-	width: 300px;
+	width: 320px;
+	 border-radius: 25px;
+
+}
+
+nav {
+		height: 50px;
+        line-height: 45px;
+    
+    }
+
+nav a {
+	font-family: 'Montserrat', sans-serif;
+	font-style: bold;
+}
+
+#userInfo {
+	margin-top: 20px;
+	text-align: center;
+	padding: 10px;
+	    border-radius: 25px;
+	border: 3px solid white;
+
+}
+
+.title {
+	font-size: 2em;
+	font-style: bold;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+#score {
+	margin-top: 25px;
+	text-align: center;
+	padding: 10px;
+	    border-radius: 25px;
+	border: 3px solid white;
+
 }
