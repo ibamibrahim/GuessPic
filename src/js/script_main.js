@@ -43,12 +43,12 @@
 
             }
 
-            var image;
-            for(var i = 1; i <= 16; i++){
-                image = $('#image_'+i);
-                image.addClass("kelasbaru");
-                console.log(image.prop("class"));
-            }
+            /* var image;
+             for (var i = 1; i <= 16; i++) {
+                 image = $('#image_' + i);
+                 console.log(image.prop("class"));
+                 image.addClass("clickableImage");
+             }*/
         });
         // shuffle image array
 
@@ -85,7 +85,7 @@
         var columnCounter = 1;
         tableArea.append('<table>');
 
-        var idImage = 0;
+        var idImage = 1;
 
         for (var i = 0; i < shuffledArray.length; i++) {
             var imageName = shuffledArray[i];
@@ -94,7 +94,7 @@
                 tableArea.append("<tr>");
             }
 
-            tableArea.append('<td width="120" height="120"><img class="clickableImage" src= "src/images/back.png" width="100" id=image_' + idImage + ' alt="' + imageName + '"></td>')
+            tableArea.append('<td width="120" height="120"><img src= "src/images/back.png" class="clickableImage" width="100" id=image_' + idImage + ' alt="' + imageName + '"></td>')
 
             columnCounter++;
 
@@ -119,11 +119,13 @@
             counterasd++;
            }, 2000);*/
 
-        $('.clickableImage').click(function() {
+        $('.clickableImage').on("click", function() {
             var imageID = $(this).prop("id");
             var imageURL = $(this).prop("alt");
 
             $(this).prop("src", "src/images/" + imageURL);
+
+            console.log(imageURL + " aaaaaaa");
 
 
             // jika clickedImage empty
@@ -147,7 +149,7 @@
 
                     secondImage.removeClass("clickableImage");
 
-                    score += 8;
+                    score += 1;
                     clickedImage = "";
 
                     if (score == 8) {
@@ -155,8 +157,13 @@
                         clearInterval(countInterval);
                         $('#userInfo').append('<p class="content red lighten-1" > You Win! </p>');
                         var value = $('#timer').find('.stopwatch').attr('value');
-                                                console.log("valuee " + value);
-                        var newScore = {"username":username, "second":value};
+                        console.log("valuee " + value);
+                        var newScore = {
+                            "username": username,
+                            "second": value
+                        };
+
+                        $('#refresh').css("display", "inline-block");
 
                         storeHighScore(newScore);
 
@@ -241,13 +248,24 @@
                     localStorage.setItem("highscore", JSON.stringify(highscore));
 
                 } else {
+
+                    
                     var counter = 1;
-                    console.log(highScoreObj.highscore.length);
-                    console.log(highScoreObj.highscore);
-                    $.each(highScoreObj.highscore, function(i, user) {
+                    var arrHighScore = highScoreObj.highscore;
+                    arrHighScore.sort(compare);
+
+                    function compare(a, b) {
+                        return a.second - b.second;
+                    }
+                    console.log(arrHighScore);
+                    $.each(arrHighScore, function(i, user) {
+                        console.log(counter + " " + user.second);
                         var secondInt = parseInt(user.second, 10);
                         var time = secondToTime(secondInt);
                         highScoreArea.append('<p class="content">' + counter + '. ' + user.username + ' - ' + time);
+                        if(counter == 5){
+                            return false;
+                        }
                         counter++;
                     });
                 }
@@ -257,17 +275,22 @@
             }
         }
 
+        $("#refreshButton").click(function(){
+            location.reload();
+        });
+
+
+
         function storeHighScore(newScore) {
             var highScoreObj = localStorage.getItem("highscore");
             highScoreObj = JSON.parse(highScoreObj);
 
             console.log(highScoreObj.highscore);
 
-            if (highScoreObj.highscore.length < 5) {
-                console.log('push');
+               console.log('push');
                 highScoreObj.highscore.push(newScore);
                 localStorage.setItem("highscore", JSON.stringify(highScoreObj));
-            }
+            
 
             loadHighScore();
         }

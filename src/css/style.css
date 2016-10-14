@@ -1,44 +1,37 @@
 #passwordBox {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 500px;
 }
-
 #passwordBox h3 {
-	position: relative;
-	margin: auto;
-	padding: 10px;
-	margin-top: 10px;
-	font-family: 'Baloo Da', cursive;
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Montserrat', cursive;
 }
-
 #passwordBox p {
-	position: relative;
-	margin: auto;
-	padding: 10px;
-	font-size: 2em;
-	margin-top: 10px;
-	font-family: 'Baloo Da', cursive;
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    font-size: 2em;
+    margin-top: 10px;
+    font-family: 'Montserrat', cursive;
 }
-
 form {
-	font-family: 'Baloo Da', cursive;
+    font-family: 'Montserrat', cursive;
 }
-
 #loginForm {
-	text-align: left;	
-	width: 300px;
+    text-align: left;
+    width: 300px;
 }
-
-
-#LoginButton{
-	float: right;
-	padding-bottom: 30px;
+#LoginButton {
+    float: right;
+    padding-bottom: 30px;
 }
-
 #wrongPassword {
-	display: none;
+    display: none;
 }
