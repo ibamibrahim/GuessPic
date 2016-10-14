@@ -20,3 +20,11 @@ td {
 .clickableImage {
 	cursor: pointer;
 }
+
+#gameInfo {
+	margin-top: 2em;
+}
+
+#startButton {
+	width: 300px;
+}
