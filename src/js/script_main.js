@@ -3,11 +3,12 @@
         // method buat bikin stop watch
 
         var countInterval;
+        var isStarted = false;
 
         $("#startButton").click(function() {
 
             //TODO: give condition what state is the button is pressed (stop or start)
-
+            isStarted = true;
             countInterval = setInterval(countUp, 1000);
 
             /*$("#startButton").prop("value", "Stop");*/
@@ -120,7 +121,9 @@
            }, 2000);*/
 
         $('.clickableImage').on("click", function() {
-            var imageID = $(this).prop("id");
+
+            if(isStarted){
+                var imageID = $(this).prop("id");
             var imageURL = $(this).prop("alt");
 
             $(this).prop("src", "src/images/" + imageURL);
@@ -196,6 +199,10 @@
 
                 console.log(clickedImage);
 
+            }
+
+            } else {
+                alert("Press start button first!");
             }
 
         });
