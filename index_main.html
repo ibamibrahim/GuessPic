@@ -5,6 +5,7 @@
     <title>Guess the Pic!</title>
     <link rel="stylesheet" href="src/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="src/css/style_main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poiret+One" rel="stylesheet">
     <script src="src/js/jquery.min.js"></script>
     <script type="text/javascript" src="src/js/script_main.js"></script>
     <script type="text/javascript" src="src/js/script.js"></script>
@@ -13,36 +14,43 @@
 
 <body>
 
+    <nav>
+        <div class="nav-wrapper teal darken-2">
+            <a href="#" class="brand-logo center">Guess the Pic!</a>
+        </div>
+    </nav>
+
+
     <div class="container" id="mainArea">
         <div id="playArea">
             <div class="row">
-                <div id="debugGameplay" class="col s8">
+                <!--  <div id="debugGameplay" class="col s8">
                     Debug Gameplay
                     <div id="logGameplay" style="position: absolute;">
                         
                     </div>
+                </div> -->
+                <div class="col s5 pull-s1" id="gameInfo">
+                    <input type="button" name="star" value="Start" class="waves-effect waves-light btn blue darken-1 z-depth-2" id="startButton">
+
+                    <div id="refresh">
+                        <input type="button" name="star" value="Play Again" class="waves-effect waves-light btn blue darken-1 z-depth-2" id="refreshButton">
+                    </div>
+                    <div id="userInfo" class="card light-blue darken-2 white-text z-depth-2">
+                        <p id="playerUsername" class="title">Hello, user 1</p>
+                        <p id="timer" class="content">Time spent: <span class="stopwatch" value="0">00:00:00</span></p>
+                    </div>
+                    <div id="score" class="card light-blue darken-3 white-text z-depth-2">
+                        <p class="title">Best scores</p>
+                        <!-- <p class="content">2. User2 - 00:10:03</p>
+                        <p class="content">3. User3 - 00:10:04</p>
+                        <p class="content">4. User4 - 00:10:05</p>
+                        <p class="content">5. User5 - 00:11:05</p> -->
+                    </div>
                 </div>
-                <div id="tableArea" class="col s8 push-s3">
-                    
+                <div id="tableArea" class="col s7">
                 </div>
             </div>
-        </div>
-        <div class="row" id="footer">
-            <div class="col s2 push-s3">
-                <p id="playerUsername">Username: user 1</p>
-                <p id="timer">Time: <span class="stopwatch" value="0">00:00:00</span></p>
-            </div>
-            <div class="col s2 push-s5">
-                <input type="button" name="star" value="Start" class="waves-effect waves-light btn teal z-depth-2" id="startButton">
-            </div>
-        </div>
-        <div id="score">
-            <p>Best Scores: </p>
-            <p>User1 - 00:10:02</p>
-            <p>User2 - 00:10:03</p>
-            <p>User3 - 00:10:04</p>
-            <p>User4 - 00:10:05</p>
-            <p>User5 - 00:11:05</p>
         </div>
     </div>
 

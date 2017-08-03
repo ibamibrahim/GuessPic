@@ -47,7 +47,7 @@
             /* var image;
              for (var i = 1; i <= 16; i++) {
                  image = $('#image_' + i);
-                 console.log(image.prop("class"));
+                 // console.log(image.prop("class"));
                  image.addClass("clickableImage");
              }*/
         });
@@ -116,7 +116,7 @@
 
         /*   var counterasd = 1; 
            setInterval(function(){
-            console.log(counterasd + ". clickedImage " + clickedImage);
+            // console.log(counterasd + ". clickedImage " + clickedImage);
             counterasd++;
            }, 2000);*/
 
@@ -128,7 +128,7 @@
 
             $(this).prop("src", "src/images/" + imageURL);
 
-            console.log(imageURL + " aaaaaaa");
+            // console.log(imageURL + " aaaaaaa");
 
 
             // jika clickedImage empty
@@ -160,7 +160,7 @@
                         clearInterval(countInterval);
                         $('#userInfo').append('<p class="content red lighten-1" > You Win! </p>');
                         var value = $('#timer').find('.stopwatch').attr('value');
-                        console.log("valuee " + value);
+                        // console.log("valuee " + value);
                         var newScore = {
                             "username": username,
                             "second": value
@@ -170,15 +170,15 @@
 
                         storeHighScore(newScore);
 
-                        console.log('1');
+                        // console.log('1');
                     }
 
-                    console.log("score " + score);
+                    // console.log("score " + score);
                 } else {
 
                     clickedImage = "";
 
-                    console.log("clickedImage" + clickedImage);
+                    // console.log("clickedImage" + clickedImage);
 
                     firstImage.addClass("clickableImage");
 
@@ -197,7 +197,7 @@
 
                 clicked.removeClass("clickableImage");
 
-                console.log(clickedImage);
+                // console.log(clickedImage);
 
             }
 
@@ -206,6 +206,7 @@
             }
 
         });
+
 
         loadHighScore();
 
@@ -264,9 +265,9 @@
                     function compare(a, b) {
                         return a.second - b.second;
                     }
-                    console.log(arrHighScore);
+                    // console.log(arrHighScore);
                     $.each(arrHighScore, function(i, user) {
-                        console.log(counter + " " + user.second);
+                        // console.log(counter + " " + user.second);
                         var secondInt = parseInt(user.second, 10);
                         var time = secondToTime(secondInt);
                         highScoreArea.append('<p class="content">' + counter + '. ' + user.username + ' - ' + time);
@@ -278,7 +279,7 @@
                 }
 
             } else {
-                console.log("Your browser does not support Web Storage");
+                // console.log("Your browser does not support Web Storage");
             }
         }
 
@@ -292,9 +293,9 @@
             var highScoreObj = localStorage.getItem("highscore");
             highScoreObj = JSON.parse(highScoreObj);
 
-            console.log(highScoreObj.highscore);
+            // console.log(highScoreObj.highscore);
 
-               console.log('push');
+               // console.log('push');
                 highScoreObj.highscore.push(newScore);
                 localStorage.setItem("highscore", JSON.stringify(highScoreObj));
             
